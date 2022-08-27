@@ -46,6 +46,7 @@ class QuizView extends Component {
     const previousQuestions = [...this.state.previousQuestions];
     if (this.state.currentQuestion.id) {
       previousQuestions.push(this.state.currentQuestion.id);
+      console.log('Theee 0', previousQuestions)
     }
 
     $.ajax({
