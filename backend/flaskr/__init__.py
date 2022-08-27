@@ -264,6 +264,13 @@ def create_app(test_config=None):
             "message": "La requête ne peut pas être traitée"
         }), 422
 
+    @app.errorhandler(500)
+    def server_error(error):
+        return jsonify({
+            "success": False,
+            "error": 500,
+            "message": "Erreur interne du serveur"
+        }), 500
 
     if __name__ =='__main__':
         app.debug=True
